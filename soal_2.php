@@ -16,6 +16,14 @@ class BMI{
 
         return $markHigherBMI;
     }
+
+    public function show($nama, $tinggi, $massa){
+        echo "<b>".$nama."</b><br>";
+        echo "Tinggi: ".$tinggi."m<br>";
+        echo "massa: ".$massa."kg<br>";
+        echo "BMI ".$nama." : ".$this->Hitung();
+        echo "<br>";
+    }
 }
 
 $massa_mark = 78;
@@ -32,23 +40,11 @@ $john1->masa = $massa_john;
 $john1->tinggi = $tinggi_john;
 
 echo "<h3>Data 1</h3>";
-echo "<b>Mark</b><br>";
-echo "Tinggi: ".$tinggi_mark."m<br>";
-echo "massa: ".$massa_mark."kg<br>";
-
-echo "<b>John</b><br>";
-echo "Tinggi: ".$tinggi_john."m<br>";
-echo "massa: ".$massa_john."kg<br>";
-echo "<br>";
-echo "BMI Mark : ".$mark1->Hitung();
-echo "<br>";
-echo "BMI John : ".$john1->Hitung();
-echo "<br>";
-
+$mark1->show("Mark", $tinggi_mark, $massa_mark);
+$john1->show("John", $tinggi_john, $massa_john);
 echo "Mark memiliki BMI lebih tinggi dari John : ".($mark1->HigherBMI($john1) ? "true" : "false");
 echo "<br>";
 echo "================================================";
-echo "<br>";
 
 $massa_mark2 = 95;
 $tinggi_mark2 = 1.88;
@@ -64,21 +60,7 @@ $john2->masa = $massa_john2;
 $john2->tinggi = $tinggi_john2;
 
 echo "<h3>Data 2</h3>";
-echo "<b>Mark</b><br>";
-echo "Tinggi: ".$tinggi_mark2."m<br>";
-echo "massa: ".$massa_mark2."kg<br>";
-
-echo "<b>John</b><br>";
-echo "Tinggi: ".$tinggi_john2."m<br>";
-echo "massa: ".$massa_john2."kg<br>";
-echo "<br>";
-echo "BMI Mark : ".$mark2->Hitung();
-echo "<br>";
-echo "BMI John : ".$john2->Hitung();
-echo "<br>";
-
+$mark2->show("Mark", $tinggi_mark2, $massa_mark2);
+$john2->show("John", $tinggi_john2, $massa_john2);
 echo "Mark memiliki BMI lebih tinggi dari John : ".($mark2->HigherBMI($john2) ? "true" : "false");
-echo "<br>";
-echo "================================================";
-echo "<br>";
 ?>

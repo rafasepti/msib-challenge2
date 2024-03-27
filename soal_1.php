@@ -29,49 +29,33 @@ class BandingSkor {
        }
        return $hasil;
     }
+
+    public function show($skor_lumba, $skor_koala ){
+        echo "================================================";
+        echo "<br> Pertandingan 1 <br>";
+        echo "Skor Tim Lumba-Lumba (96, 108, 89): " . $skor_lumba->getRata();
+        echo "<br>";
+        echo "Skor Tim Koala (89, 91, 110): " . $skor_koala->getRata();
+        echo "<br>";
+
+        echo "Hasil : ".$this->cekHasil($skor_lumba->getRata(), $skor_koala->getRata());
+        echo "<br>";
+    }
 }
-echo "================================================";
-echo "<br> Pertandingan 1 <br>";
+
 $skor_lumba1 = new TimSenam(96, 108, 89);
 $skor_koala1 = new TimSenam(89, 91, 110);
-
-echo "Skor Tim Lumba-Lumba (96, 108, 89): " . $skor_lumba1->getRata();
-echo "<br>";
-echo "Skor Tim Koala (89, 91, 110): " . $skor_koala1->getRata();
-echo "<br>";
-
 $pertandingan1 = new BandingSkor();
-echo "Hasil : ".$pertandingan1->cekHasil($skor_lumba1->getRata(), $skor_koala1->getRata());
-echo "<br>";
-echo "================================================";
-echo "<br> Pertandingan 2 <br>";
+$pertandingan1->show($skor_lumba1,$skor_koala1);
 
 $skor_lumba2 = new TimSenam(97, 112, 101);
 $skor_koala2 = new TimSenam(109, 95, 123);
-
-echo "Skor Tim Lumba-Lumba (97, 112, 101): " . $skor_lumba2->getRata();
-echo "<br>";
-echo "Skor Tim Koala (109, 95, 123): " . $skor_koala2->getRata();
-echo "<br>";
-
 $pertandingan2 = new BandingSkor();
-echo "Hasil : ".$pertandingan2->cekHasil($skor_lumba2->getRata(), $skor_koala2->getRata());
-echo "<br>";
-echo "================================================";
-echo "<br> Pertandingan 3 <br>";
+$pertandingan2->show($skor_lumba2,$skor_koala2);
 
 $skor_lumba3 = new TimSenam(97, 112, 101);
 $skor_koala3 = new TimSenam(109, 95, 106);
-
-echo "Skor Tim Lumba-Lumba (97, 112, 101): " . $skor_lumba3->getRata();
-echo "<br>";
-echo "Skor Tim Koala (109, 95, 106): " . $skor_koala3->getRata();
-echo "<br>";
-
 $pertandingan3 = new BandingSkor();
-echo "Hasil : ".$pertandingan3->cekHasil($skor_lumba3->getRata(), $skor_koala3->getRata());
-echo "<br>";
-echo "================================================";
-echo "<br>";
+$pertandingan3->show($skor_lumba3,$skor_koala3);
 
 ?>
